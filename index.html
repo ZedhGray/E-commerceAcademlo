@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Ferno</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    <script src = "https://maxcdn.bootstrapcdn.com /bootstrap/3.4.0/js/bootstrap.min.js"> </script>
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body class="bg-dark bg-gradient">
+    <div class="container mt-5">
+        <div class="container">
+            <div class="row bg-gradient">
+                <div class="text-end mt-5">
+                  
+                </div>
+                <img src="https://www.academlo.com/logo_academlo.png">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 bg">
+                <div class="card bg-secondary">
+                    <div class="card-body">
+                        <form onsubmit="event.preventDefault(), updateProduct()">
+                            <div class="mb-3">
+                              <label for="name" class="form-label">Name</label>
+                              <input type="text" class="form-control" id="name">
+                              <div class="mb-3">
+                                <label for="price" class="form-label">Price</label>
+                                <input type="number" class="form-control" id="price"></input>
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">URLimage</label>
+                                    <input type="img" class="form-control" id="image"></input>
+                              </div>
+                              </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5">
+            <button onclick="storeNewProduct()">Store new product</button>
+        </div>
+    
+        <div class="row" id="products-container">
+        <!-- /*tareas -->
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./Script.js"></script>
+        <script src="https://kit.fontawesome.com/23f32b8402.js" crossorigin="anonymous"></script>
+</body>
+</html>
