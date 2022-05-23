@@ -47,25 +47,6 @@ function getProducts() {
       })
 }
 
-function storeNewProduct(){
-      const newProduct = {
-        name: 'Ingrese objeto',
-        price: 100,
-        image: "https://cdn-icons-png.flaticon.com/512/16/16410.png"
-      }
-      axios.post('https://e-commerce-api-academlo.herokuapp.com/api/products', newProduct)
-    .then(function (response) {
-      console.log(response)
-      alert('The product was stored correctly');
-      getProducts();
-      })
-    .catch(function (error) {
-      console.log(error)
-      alert('The product could not be stored');
-      })
-}
-
-
 function deleteProduct(id){
   const confirmation = confirm('Are you sure you want to delete the product?');
   if(!confirmation){
@@ -81,6 +62,23 @@ function deleteProduct(id){
     .catch(function (error) {
       console.log(error)
       alert('Could not delete the product correctly');
+      })
+}
+function createProduct() {
+  const newProduct = {
+      name: document.getElementById('name').value,
+      price: document.getElementById('price').value,
+      image: document.getElementById('image').value
+  }
+
+  axios.post('https://e-commerce-api-academlo.herokuapp.com/api/products', newProduct)
+      .then(function (response) {
+          alert('The product was created successfully');
+          getProducts();
+      })
+      .catch(function (error) {
+          alert('Failed to create product');
+          console.log(error);
       })
 }
 
