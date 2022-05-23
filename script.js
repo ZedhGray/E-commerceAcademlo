@@ -35,8 +35,7 @@ container.innerHTML = html;
 
 
 
-
-
+//resibe los productos de la api
 function getProducts() {
     axios.get('https://e-commerce-api-academlo.herokuapp.com/api/products') 
     .then(function (response) {
@@ -50,9 +49,9 @@ function getProducts() {
 
 function storeNewProduct(){
       const newProduct = {
-        name: 'Taco',
-        price: 10,
-        image: "https://laroussecocina.mx/wp-content/uploads/2019/07/S050419-14-TACOS-0459.jpg"
+        name: 'Ingrese objeto',
+        price: 100,
+        image: "https://cdn-icons-png.flaticon.com/512/16/16410.png"
       }
       axios.post('https://e-commerce-api-academlo.herokuapp.com/api/products', newProduct)
     .then(function (response) {
@@ -72,6 +71,7 @@ function deleteProduct(id){
   if(!confirmation){
     return
   }
+
   axios.delete(`${baseURL}/products/${id}`)
     .then(function (response) {
       console.log(response)
